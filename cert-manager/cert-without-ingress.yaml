@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: ben-knox-dot-com-cert
+  namespace: default
+spec:
+  secretName: ben-knox-dot-com-tls-secret
+  commonName: ben-knox.com.local
+  dnsNames:
+  - ben-knox.com.local
+  issuerRef:
+    name: ca-issuer
+    kind: ClusterIssuer
+    group: cert-manager.io
