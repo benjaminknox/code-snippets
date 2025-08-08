@@ -1,0 +1,9 @@
+      - name: Get commit SHA
+        id: commit_sha
+        run: echo "COMMIT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
+      - name: Get app name
+        id: app_name
+        run: |
+          REPO_NAME="${{ github.repository }}" 
+          echo "APP_NAME=\"${REPO_NAME##*/}\"" >> $GITHUB_ENV
