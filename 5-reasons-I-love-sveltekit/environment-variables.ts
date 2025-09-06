@@ -1,16 +1,23 @@
 // .env
-VITE_API_URL=https://api.example.com
-PRIVATE_SECRET=abc123
+PUBLIC_CLIENT_TOKEN=clientTokenForApi
+PRIVATE_SECRET=serverSideSecretForApi
 
 // src/routes/+page.svelte (client-side)
-<script>
+<script lang="ts">
   import { env } from '$env/static/public';
-  console.log(env.VITE_API_URL); // https://api.example.com
+  const { PUBLIC_CLIENT_TOKEN } = env;
+  console.log(PUBLIC_CLIENT_TOKEN); // clientTokenForApi
 </script>
 
-// src/routes/api/+server.js (server-side)
+// src/routes/+page.ts (server-side)
 import { env } from '$env/static/private';
-export async function GET() {
-  console.log(env.PRIVATE_SECRET); // abc123
-  return new Response('Server data');
-}
+import type { PageLoad } from './$types';
+export const prerender = true;
+  
+const { PRIVATE_SECRET } = env;
+
+export const load: PageLoad = async ({ fetch }) => {
+  console.log(PRIVATE_SECRET); // serverSideSecretForApi
+	const res = await fetch('/my-server-route.json');
+	return await res.json();
+};
