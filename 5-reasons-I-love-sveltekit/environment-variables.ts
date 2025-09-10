@@ -4,17 +4,15 @@ PRIVATE_SECRET=serverSideSecretForApi
 
 // src/routes/+page.svelte (client-side)
 <script lang="ts">
-  import { env } from '$env/static/public';
-  const { PUBLIC_CLIENT_TOKEN } = env;
+  import { PUBLIC_CLIENT_TOKEN } from '$env/static/public';
+
   console.log(PUBLIC_CLIENT_TOKEN); // clientTokenForApi
 </script>
 
 // src/routes/+page.ts (server-side)
-import { env } from '$env/static/private';
+import { PRIVATE_SECRET } from '$env/static/private';
 import type { PageLoad } from './$types';
 export const prerender = true;
-  
-const { PRIVATE_SECRET } = env;
 
 export const load: PageLoad = async ({ fetch }) => {
   console.log(PRIVATE_SECRET); // serverSideSecretForApi
