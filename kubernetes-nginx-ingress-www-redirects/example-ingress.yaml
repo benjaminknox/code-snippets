@@ -17,6 +17,7 @@ metadata:
   namespace: default
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   ingressClassName: nginx
   rules:
@@ -30,3 +31,7 @@ spec:
             name: example-app-service
             port:
               number: 80
+  tls:
+  - hosts:
+    - example-app.com
+    secretName: example-cert
