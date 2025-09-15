@@ -6,8 +6,8 @@ spec:
   selector:
     app: example-app
   ports:
-    - port: 3000
-      targetPort: 3000
+    - port: 80
+      targetPort: 80
   type: ClusterIP
 ---
 apiVersion: networking.k8s.io/v1
@@ -34,6 +34,6 @@ spec:
               number: 80
   tls:
   - hosts:
-    - example-app.com
-    - www.example-app.com
+      - example-app.com
+      - www.example-app.com
     secretName: example-cert
