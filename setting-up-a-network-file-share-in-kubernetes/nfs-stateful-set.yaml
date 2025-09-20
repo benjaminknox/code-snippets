@@ -26,12 +26,22 @@ spec:
           containerPort: 111
         securityContext:
           privileged: true
+          runAsUser: 0
+          runAsGroup: 0
+          capabilities:
+            add:
+              - SYS_ADMIN
+              - SETPCAP
         volumeMounts:
-        - mountPath: /exports
+        - mountPath: /nfsshare/data
           name: nfs-storage
         env:
         - name: SHARED_DIRECTORY
-          value: "/exports"
+          value: "/nfsshare/data"
+        - name: EXPORT_PATH
+          value: "/nfsshare/data"
+        - name: NFS_EXPORT_0
+          value: "/nfsshare/data *(rw,sync,no_subtree_check,no_root_squash,insecure)"
   volumeClaimTemplates:
   - metadata:
       name: nfs-storage
