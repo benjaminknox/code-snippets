@@ -5,11 +5,15 @@
 
   let backEndMessage = $state("");
 
-  socket.emit('frontend-message', {frontEnd: `${Date.now()}`});
-  
-  socket.on('backend-message-to-frontend', (data) => {
-    backendMessage = data;
+  const sendFrontendMessage = () => {
+    socket.emit('frontend-message', { frontEnd: `${Date.now()}` });
+  }
+
+  socket.on('backend-message-to-frontend', (frontEnd) => {
+    backendMessage = frontEnd;
   });
 </script>
+
+<a onclick={sendFrontendMessage}>Send Message</a>
 
 <div>Svelte Frontend: {backendMessage}</div>
