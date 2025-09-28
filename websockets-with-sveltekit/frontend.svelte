@@ -9,8 +9,8 @@
     socket.emit('frontend-message', { frontEnd: `${Date.now()}` });
   }
 
-  socket.on('backend-message-to-frontend', (frontEnd) => {
-    backendMessage = frontEnd;
+  socket.on('backend-message-to-frontend', (frontend) => {
+    backendMessage = frontend;
   });
 </script>
 
