@@ -5,13 +5,14 @@ export const startWebsocketServer = async (httpServer : any) => {
 
   io.on('connection', (socket) => {
 
-    // We'll send a message from the frontend
+    // We'll handle a message from the frontend
     socket.on('frontend-message', async (data) => {
       console.log(data);
       
-      const { frontEnd } = data;
-      
-      io.sockets.emit('backend-message-to-frontend', frontEnd);
+      const { frontend } = data;
+
+      // Emit a message to the frontend
+      io.sockets.emit('backend-message-to-frontend', frontend);
     });
 
     // Add any other events here...
