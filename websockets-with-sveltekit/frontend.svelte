@@ -6,7 +6,7 @@
   let backEndMessage = $state("");
 
   const sendFrontendMessage = () => {
-    socket.emit('frontend-message', { frontEnd: `${Date.now()}` });
+    socket.emit('frontend-message', { frontend: `${Date.now()}` });
   }
 
   socket.on('backend-message-to-frontend', (frontend) => {
