@@ -8,7 +8,10 @@ export const startWebsocketServer = async (httpServer : any) => {
     // We'll send a message from the frontend
     socket.on('frontend-message', async (data) => {
       console.log(data);
-      io.sockets.emit('backend-message-to-frontend', data)
+      
+      const { frontEnd } = data;
+      
+      io.sockets.emit('backend-message-to-frontend', frontEnd);
     });
 
     // Add any other events here...
