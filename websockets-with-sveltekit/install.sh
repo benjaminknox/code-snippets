@@ -7,7 +7,7 @@ npm i socket.io-client
 # Sveltkit Adapter for Node, used for building our application
 npm i -D @sveltejs/adapter-node
 
-# Optional: express for your server you can fit this to 
-#           your server but the snippets of code will be
-#           shown here using express (for production builds)
+# Optional: express for your production build, you can fit this
+#           to your server, but the snippets of code will be
+#           shown here using express
 npm i express
