@@ -1,0 +1,8 @@
+ingress:
+  enabled: true
+  ingressClassName: nginx
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/proxy-body-size: "10000m"
+  host: longorn.homelab.local
+  pathType: Prefix
