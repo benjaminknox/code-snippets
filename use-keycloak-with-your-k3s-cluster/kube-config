@@ -1,0 +1,30 @@
+apiVersion: v1
+clusters:
+...
+- cluster:
+    insecure-skip-tls-verify: true
+    server: https://<path to your K3s cluster>:6443
+  name: <name of your K3s cluster>
+contexts:
+...
+- context:
+    cluster: <name of your K3s cluster>
+    user: <your keycloak user name>
+  name: k3s-cluster-oidc-context
+...
+users:
+...
+- name: <your keycloak user name>
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1
+      args:
+      - oidc-login
+      - get-token
+      - --oidc-issuer-url=https://<your keycloak domain>/realms/<your realm>
+      - --oidc-client-id=<your client id>
+      - --oidc-client-secret=<keycloak secret>
+      command: kubectl
+      env: null
+      interactiveMode: Never
+      provideClusterInfo: false
