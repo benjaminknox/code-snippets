@@ -4,8 +4,8 @@
 ExecStart=/usr/local/bin/k3s \
     server \
         '--disable=traefik' \
-        '--kube-apiserver-arg=oidc-issuer-url=https://keycloak.k3s/realms/k3s-cluster' \
-        '--kube-apiserver-arg=oidc-client-id=cluster-user' \
+        '--kube-apiserver-arg=oidc-issuer-url=https://<your keycloak domain>/realms/<your realm>' \
+        '--kube-apiserver-arg=oidc-client-id=<your client id>' \
         '--kube-apiserver-arg=oidc-username-claim=preferred_username' \
         '--kube-apiserver-arg=oidc-groups-claim=groups' \
         '--kube-apiserver-arg=oidc-username-prefix=oidc:' \
