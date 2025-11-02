@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Replace your keycloak domain, your realm, and your client id.
 
 curl -sfL https://get.k3s.io | sh -s - server \
