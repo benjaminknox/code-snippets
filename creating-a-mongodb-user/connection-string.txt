@@ -1,0 +1,1 @@
+mongodb://example-mongodb-user:example-password@<uri-to-your-host>/create-user-example-db?authSource=create-user-example-db
