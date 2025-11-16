@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import 'quill/dist/quill.snow.css';
 
   let content: HTMLInputElement; // We will create an input element in step 4
