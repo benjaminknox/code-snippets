@@ -1,8 +1,6 @@
 <script lang="ts">
   import 'quill/dist/quill.snow.css';
 
-  let { data } = $props();
-
   let content: HTMLInputElement; // We will create an input element in step 4
 
   $effect(() => {
