@@ -1,10 +1,11 @@
-<script>
+<script lang="ts">
+  import type Quill from 'quill';
   import 'quill/dist/quill.snow.css';
 
   let content: HTMLInputElement; // We will create an input element in step 4
 
   $effect(() => {
-    let quill;
+    let quill: Quill | undefined;
 
     (async () => {
       const Quill = (await import('quill')).default;
