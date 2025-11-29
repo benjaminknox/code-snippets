@@ -1,0 +1,115 @@
+start-at-login = false
+default-root-container-layout = 'tiles'
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+[workspace-to-monitor-force-assignment]
+0 = 'built-in'
+1 = ['secondary', '<change to your monitor name>']
+youtube = ['secondary', '<change to your monitor name>']
+comms = 'built-in'
+learning = ['secondary', '<change to your monitor name>']
+developer = ['secondary', '<change to your monitor name>']
+mail = 'built-in'
+info = 'built-in'
+k8s = ['secondary', '<change to your monitor name>']
+figma = ['secondary', '<change to your monitor name>']
+music = 'built-in'
+1password = 'built-in'
+dataannotation = ['secondary', '<change to your monitor name>']
+
+[mode.main.binding]
+cmd-shift-keypad0 = 'workspace 0'
+alt-shift-keypad0 = 'move-node-to-workspace 0'
+cmd-shift-keypad1 = 'workspace 1'
+alt-shift-keypad1 = 'move-node-to-workspace 1'
+cmd-shift-c = 'workspace comms'
+alt-shift-c = 'move-node-to-workspace comms'
+cmd-shift-d = 'workspace developer'
+alt-shift-d = 'move-node-to-workspace developer'
+cmd-shift-e = 'workspace figma'
+alt-shift-e = 'move-node-to-workspace figma'
+cmd-shift-i = 'workspace info'
+alt-shift-i = 'move-node-to-workspace info'
+cmd-shift-k = 'workspace k8s'
+alt-shift-k = 'move-node-to-workspace k8s'
+cmd-shift-t = 'workspace learning'
+alt-shift-t = 'move-node-to-workspace learning'
+cmd-shift-m = 'workspace music'
+alt-shift-m = 'move-node-to-workspace music'
+cmd-shift-g = 'workspace mail'
+alt-shift-g = 'move-node-to-workspace mail'
+cmd-shift-1 = 'workspace 1password'
+alt-shift-1 = 'move-node-to-workspace 1password'
+cmd-shift-s = 'workspace dataannotation'
+alt-shift-s = 'move-node-to-workspace dataannotation'
+cmd-shift-y = 'workspace youtube'
+alt-shift-y = 'move-node-to-workspace youtube'
+
+alt-shift-left = 'move left'
+alt-shift-right = 'move right'
+alt-shift-down = 'move down'
+alt-shift-up = 'move up'
+
+cmd-shift-left = 'focus left'
+cmd-shift-right = 'focus right'
+cmd-shift-down = 'focus down'
+cmd-shift-up = 'focus up'
+
+cmd-shift-h = 'resize smart -50'
+cmd-shift-l = 'resize smart +50'
+
+cmd-shift-f = 'fullscreen'
+
+alt-cmd-shift-t = 'layout tiling'
+alt-cmd-shift-f = 'layout floating'
+alt-cmd-shift-v = 'layout v_tiles'
+alt-cmd-shift-h = 'layout h_tiles'
+
+cmd-shift-minus = 'workspace-back-and-forth'
+
+[[on-window-detected]]
+if.app-id = 'com.brave.Browser.app.<app id>'
+run = ['move-node-to-workspace youtube']
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome.app.<app id>'
+run = ['move-node-to-workspace comms']
+[[on-window-detected]]
+if.app-id = 'org.whispersystems.signal-desktop'
+run = ['move-node-to-workspace comms']
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = ['move-node-to-workspace comms']
+[[on-window-detected]]
+if.app-id = 'org.alacritty'
+if.window-title-regex-substring = 'alacritty-for-k8s'
+run = ['move-node-to-workspace k8s']
+[[on-window-detected]]
+if.window-title-regex-substring = 'learning-workspace'
+run = ['move-node-to-workspace learning']
+[[on-window-detected]]
+if.app-id = 'org.alacritty'
+run = ['move-node-to-workspace developer']
+[[on-window-detected]]
+if.window-title-regex-substring = 'dataannotation-tech'
+run = ['move-node-to-workspace dataannotation']
+[[on-window-detected]]
+if.app-id = 'com.electron.kontena-lens'
+run = ['move-node-to-workspace k8s']
+[[on-window-detected]]
+if.app-id = 'com.figma.Desktop'
+run = ['move-node-to-workspace figma']
+[[on-window-detected]]
+if.app-id = 'com.pandora.desktop'
+run = ['move-node-to-workspace music']
+[[on-window-detected]]
+if.app-id = 'com.anthropic.claudefordesktop'
+run = ['move-node-to-workspace info']
+[[on-window-detected]]
+if.app-id = 'com.brave.Browser.app.<app id>'
+run = ['move-node-to-workspace mail']
+[[on-window-detected]]
+if.app-id = 'ch.protonmail.desktop'
+run = ['move-node-to-workspace mail']
+[[on-window-detected]]
+if.app-id = 'com.1password.1password'
+run = ['move-node-to-workspace 1password']
