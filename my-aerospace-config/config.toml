@@ -38,10 +38,8 @@ cmd-shift-m = 'workspace music'
 alt-shift-m = 'move-node-to-workspace music'
 cmd-shift-g = 'workspace mail'
 alt-shift-g = 'move-node-to-workspace mail'
-cmd-shift-1 = 'workspace 1password'
-alt-shift-1 = 'move-node-to-workspace 1password'
-cmd-shift-s = 'workspace dataannotation'
-alt-shift-s = 'move-node-to-workspace dataannotation'
+cmd-shift-1 = 'workspace password-manager'
+alt-shift-1 = 'move-node-to-workspace password-manager'
 cmd-shift-y = 'workspace youtube'
 alt-shift-y = 'move-node-to-workspace youtube'
 
@@ -90,9 +88,6 @@ run = ['move-node-to-workspace learning']
 if.app-id = 'org.alacritty'
 run = ['move-node-to-workspace developer']
 [[on-window-detected]]
-if.window-title-regex-substring = 'dataannotation-tech'
-run = ['move-node-to-workspace dataannotation']
-[[on-window-detected]]
 if.app-id = 'com.electron.kontena-lens'
 run = ['move-node-to-workspace k8s']
 [[on-window-detected]]
@@ -108,8 +103,8 @@ run = ['move-node-to-workspace info']
 if.app-id = 'com.brave.Browser.app.<app id>'
 run = ['move-node-to-workspace mail']
 [[on-window-detected]]
-if.app-id = 'ch.protonmail.desktop'
+if.app-id = 'ch.<email app>.desktop'
 run = ['move-node-to-workspace mail']
 [[on-window-detected]]
-if.app-id = 'com.1password.1password'
-run = ['move-node-to-workspace 1password']
+if.app-id = '<password manager>'
+run = ['move-node-to-workspace password-manager']
