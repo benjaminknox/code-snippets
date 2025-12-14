@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "SvelteKit Adapters In Practice Example",
+  "version": "1.0.0",
+  "description": "SvelteKit Adapters In Practice Example Chrome Extension adapter",
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_title": "Click to open panel"
+  },
+  "side_panel": {
+    "default_path": "/index.html"
+  },
+  "permissions": ["sidePanel"]
+}
