@@ -1,4 +1,4 @@
-import adapter from 'sveltekit-adapter-chrome-extension';
+import adapter from 'sveltekit-adapter-chrome-extension'; // <--- Update the import to user the chrome extension package
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
