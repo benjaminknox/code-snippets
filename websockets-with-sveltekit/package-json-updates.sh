@@ -5,4 +5,4 @@
 tsc src/lib/websockets/start-websocket-server.ts --target esnext --outDir build --moduleResolution nodenext --module nodenext
 
 # Update the build property to this:
-vite build && npm ru build-websocket-server
+vite build && npm run build-websocket-server
