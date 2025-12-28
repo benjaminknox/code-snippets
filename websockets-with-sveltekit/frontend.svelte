@@ -10,10 +10,10 @@
   }
 
   socket.on('backend-message-to-frontend', (frontend) => {
-    backendMessage = frontend;
+    backEndMessage = frontend;
   });
 </script>
 
 <a onclick={sendFrontendMessage}>Send Message</a>
 
-<div>Svelte Frontend: {backendMessage}</div>
+<div>Svelte Frontend: {backEndMessage}</div>
