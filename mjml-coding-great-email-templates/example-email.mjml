@@ -1,0 +1,47 @@
+<mjml>
+  <mj-head>
+    <mj-title>Example Email</mj-title>
+  </mj-head>
+  
+  <mj-body background-color="#f4f4f4">
+    <!-- Header -->
+    <mj-section background-color="#ffffff" padding="20px">
+      <mj-column>
+        <mj-image 
+          src="https://placehold.co/150x50/4A90E2/ffffff?text=Logo" 
+          width="150px"
+        />
+      </mj-column>
+    </mj-section>
+
+    <!-- Hero -->
+    <mj-section background-color="#4A90E2" padding="30px 20px">
+      <mj-column>
+        <mj-text font-size="28px" color="#ffffff" align="center">
+          Example Email!
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Content -->
+    <mj-section background-color="#ffffff" padding="30px 20px">
+      <mj-column>
+        <mj-text font-size="16px">
+          This is a simple MJML template demonstrating the core components. It includes a header with logo, hero section, content area, and footer.
+        </mj-text>
+        <mj-button href="https://example.com" background-color="#4A90E2">
+          Learn More
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <!-- Footer -->
+    <mj-section background-color="#333333" padding="20px">
+      <mj-column>
+        <mj-text color="#ffffff" font-size="12px" align="center">
+          © 2024 Company Name
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
